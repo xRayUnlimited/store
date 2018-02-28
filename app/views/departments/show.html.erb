@@ -1,8 +1,8 @@
 <h1><%= @department.name %></h1>
 <hr />
 <p>What would you like to do?</p>
-<%= link_to 'View Depts', department_topics_path(@edit_department_path) %>
+<%= link_to 'Back', departments_path %>
 <br />
-<%= link_to 'Edit Depts', edit_department_path(@department) %>
+<%= link_to 'Edit this department', edit_department_path(@department) %>
 <br />
-<%= link_to 'Delete Depts', @department, method: :delete %>
+<%= link_to 'Delete this department', @department, method: :delete %>
