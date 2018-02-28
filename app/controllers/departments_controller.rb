@@ -1,7 +1,8 @@
 class DepartmentsController < ApplicationController
-  before_action :set_department, only [:show, :edit, :update, :destroy]
+  before_action :set_department, only: [:show, :edit, :update, :destroy]
+  
   def index
-    @department = Departments.all
+    @departments = Department.all
   end
 
   def show
@@ -9,15 +10,18 @@ class DepartmentsController < ApplicationController
 
   def new
     @department = Department.new
+    render partial: "form"
   end
-
+  
   def edit
+    render partial: "form"
   end
+  
 
   def create
     @department = Department.new(department_params)
     if @department.save
-      redirect_to department_path
+      redirect_to departments_path
     else
       render :new
     end
